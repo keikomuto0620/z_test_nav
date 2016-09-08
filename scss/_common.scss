@@ -1,0 +1,275 @@
+@charset "UTF-8";
+
+/*
+#common
+===============================================
+- サイト全体の共通設定
+- レスポンシブ対応
+- 全ページ共通部品 (header, footer, sidebar, etc.)
+*/
+
+
+/* basic setting */
+
+html {
+  font-size: 62.5%;
+  height: 100%;
+}
+
+body {
+  background-color: #fff;
+  color: #000;
+  font-size: 1.4rem;
+  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "MS Pゴシック", "MS P Gothic", sans-serif;
+  line-height: 1.6;
+  //min-width: $contentWidth;
+  height: 100%;
+  @include mq {
+    width: 100%;
+    //min-width: auto;
+  }
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+
+/* responsive display */
+
+.sp {
+  display: none;
+}
+
+@media screen and (max-width: $breakPoint) {
+  .pc {
+    display: none;
+  }
+  .sp {
+    display: block;
+  }
+}
+
+
+/* layout */
+
+.l-header {
+  font-size: 3em;
+  padding: .5em;
+  text-transform: capitalize;
+  background-color: #fff;
+  @include mq {
+    position: fixed;
+    font-size: 1.3em;
+    padding-right: 60px;
+    z-index: 1000;
+  }
+}
+
+.l-main {
+  display: flex;
+  height: 100%;
+  @include mq {
+    display: block;
+    position: relative;
+    height: 100%;
+    padding: 76px 0 55px;
+    overflow: hidden;
+  }
+}
+
+.l-content {
+  /* background-color: #ddd; */
+  width: 70%;
+  order: 2;
+  position: relative;
+  @include mq {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+
+/* side */
+
+.l-side {
+  position: relative;
+  width: 30%;
+  order: 1;
+  transition: all .5s;
+  &.is-side {
+    left: 0;
+  }
+  @include mq {
+    position: absolute;
+    top: 76px;
+    right: -100%;
+    width: 100%;
+    height: 100%;
+    z-index: 300;
+    &.is-side {
+      //z-index: 300;
+      right: 0;
+      left: inherit;
+    }
+  }
+}
+
+.navSide {
+  height: 100%;
+  background-color: #ece1fb;
+  @include mq {
+    margin-top: 55px;
+  }
+  ul {
+    position: fixed;
+    left: -100%;
+    top: 110px;
+    width: 30%;
+    height: 100%;
+    margin-top: 55px;
+    transition: all .5s;
+    background-color: #cfaffa;
+    @include mq {
+      margin-top: 0;
+      left: inherit;
+      right: -100%;
+      top: 131px;
+      width: 100%;
+    }
+    ul {
+      background-color: #b37dfa
+;
+      ul {
+        background-color: #974bfa;
+      }
+    }
+  }
+  .is-childOpen + ul,
+  .is-childOpen .is-childOpen + ul {
+    left: 0;
+    @include mq {
+      left: inherit;
+      right: 0;
+    }
+  }
+
+  li {
+    line-height: 2em;
+    border-bottom: 1px solid #fff;
+    &:last-child {
+      border: none;
+    }
+    a {
+      display: block;
+      padding-left: 1em;
+      background-color: #000;
+      &:hover,
+      &.is-current {
+        background-color: #c125f6;
+      }
+    }
+    li a {
+      background-color: #333;
+    }
+    li li a {
+      background-color: #666;
+    }
+    li li li a {
+      background-color: #999;
+    }
+  }
+}
+  @include mq {
+    .l-side:not(.is-side) .is-childOpen + ul,
+    .l-side:not(.is-side) .is-childOpen .is-childOpen + ul {
+      right: -100%;
+    }
+  }
+.footerSide {
+  background-color: #aaa;
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  @include mq {
+    position: fixed;
+    width: 100%;
+  }
+}
+
+
+/* section */
+
+.sec {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 1em;
+  display: none;
+  background-color: #ddd;
+  &.is-active {
+    display: block;
+    @include mq {
+      left: 0;
+      //z-index: 400;
+    }
+  }
+  @include mq {
+    z-index: 200;
+    &:not(.is-active) {
+      left: -100%;
+      //z-index: 400;
+      transition: all .5s;
+    }
+    &.sec--frontPage {
+      z-index: 0;
+    }
+  }
+  h2 {
+    font-size: 2em;
+    border-bottom: 1px solid;
+    margin-bottom: 1em;
+    text-transform: capitalize;
+  }
+}
+
+
+/* button to displaying navigation */
+
+.btnNav {
+  position: absolute;
+  top: .5em;
+  right: .5em;
+  padding: 5px;
+  background-color: #fff;
+  border: 2px solid;
+  border-radius: 5px;
+  width: 40px;
+  height: 40px;
+  &.is-side span {
+    &:first-child {
+      transform: translateY(7px) rotate(45deg);
+    }
+    &:nth-child(2) {
+      opacity: 0;
+      transform: translateY(7px);
+    }
+    &:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+  }
+}
+
+.btnNav__Line {
+  span {
+    display: block;
+    height: 2px;
+    background-color: #000;
+    margin-top: 5px;
+    transition: all .5s ease-in-out;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}

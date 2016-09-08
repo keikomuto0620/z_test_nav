@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!-- InstanceBegin template="/Templates/temp.dwt" codeOutsideHTMLIsLocked="false" -->
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <title>Demonstration of side navigation</title>
+  <link rel="shortcut icon" href="images/favicon.ico" />
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+  <header class="l-header">
+    <h1>A demonstration of a side navigation motions</h1>
+    <button type="button" id="js-btnNav" class="btnNav sp">
+      <span class="btnNav__Line"><span></span><span></span><span></span></span>
+    </button>
+  </header>
+  <main class="l-main">
+    <div id="js-content" class="l-content">
+      <section id="page00" class="sec sec--frontPage is-active">
+        <h2>front page</h2>
+        <!--#include virtual="inc/text00.html" -->
+      </section>
+      <section id="pageA" class="sec">
+        <h2>page A</h2>
+        <!--#include virtual="inc/text01.html" -->
+      </section>
+      <section id="pageB01" class="sec">
+        <h2>page B01</h2>
+        <!--#include virtual="inc/text01.html" -->
+      </section>
+      <section id="pageB02" class="sec">
+        <h2>page B02</h2>
+        <!--#include virtual="inc/text02.html" -->
+      </section>
+      <section id="pageB03" class="sec">
+        <h2>page B03</h2>
+        <!--#include virtual="inc/text03.html" -->
+      </section>
+      <section id="pageB04" class="sec">
+        <h2>page B04</h2>
+        <!--#include virtual="inc/text04.html" -->
+      </section>
+      <section id="pageC01_01" class="sec">
+        <h2>page C01_01</h2>
+        <!--#include virtual="inc/text01.html" -->
+      </section>
+      <section id="pageC01_02" class="sec">
+        <h2>page C01_02</h2>
+        <!--#include virtual="inc/text02.html" -->
+      </section>
+      <section id="pageC01_03" class="sec">
+        <h2>page C01_03</h2>
+        <!--#include virtual="inc/text03.html" -->
+      </section>
+      <section id="pageC01_04" class="sec">
+        <h2>page C01_04</h2>
+        <!--#include virtual="inc/text04.html" -->
+      </section>
+      <section id="pageC02" class="sec">
+        <h2>page C02</h2>
+        <!--#include virtual="inc/text02.html" -->
+      </section>
+      <section id="pageC03" class="sec">
+        <h2>page C03</h2>
+        <!--#include virtual="inc/text03.html" -->
+      </section>
+      <section id="pageC04" class="sec">
+        <h2>page C04</h2>
+        <!--#include virtual="inc/text04.html" -->
+      </section>
+      <section id="pageD01_01_01" class="sec">
+        <h2>page D01_01_01</h2>
+        <!--#include virtual="inc/text01.html" -->
+      </section>
+      <section id="pageD01_01_02" class="sec">
+        <h2>page D01_01_02</h2>
+        <!--#include virtual="inc/text02.html" -->
+      </section>
+      <section id="pageD01_01_03" class="sec">
+        <h2>page D01_01_03</h2>
+        <!--#include virtual="inc/text03.html" -->
+      </section>
+      <section id="pageD01_01_04" class="sec">
+        <h2>page D01_01_04</h2>
+        <!--#include virtual="inc/text04.html" -->
+      </section>
+      <section id="pageD02" class="sec">
+        <h2>page D02</h2>
+        <!--#include virtual="inc/text02.html" -->
+      </section>
+      <section id="pageD03" class="sec">
+        <h2>page D03</h2>
+        <!--#include virtual="inc/text03.html" -->
+      </section>
+      <section id="pageD04" class="sec">
+        <h2>page D04</h2>
+        <!--#include virtual="inc/text04.html" -->
+      </section>
+    </div>
+    <div id="js-side" class="l-side">
+      <footer class="footerSide">
+        <button id="js-navi02" class="navi02">
+          back
+        </button>
+        <button id="js-navi03" class="navi03">
+          front page
+        </button>
+      </footer>
+      <ul id="js-navSide" class="navSide">
+        <li><a href="#pageA" class="btn btn01">A</a></li>
+        <li>
+          <a href="#" class="btn btn01">B</a>
+          <ul>
+            <li><a href="#pageB01" class="btn btn02">B01</a></li>
+            <li><a href="#pageB02" class="btn btn02">B02</a></li>
+            <li><a href="#pageB03" class="btn btn02">B03</a></li>
+            <li><a href="#pageB04" class="btn btn02">B04</a></li>
+          </ul>
+        </li>
+        <li><a href="#" class="btn btn01">C</a>
+          <ul>
+            <li><a href="#" class="btn btn02">C01</a>
+              <ul>
+                <li><a href="#pageC01_01" class="btn btn03">C01_01</a></li>
+                <li><a href="#pageC01_02" class="btn btn03">C01_02</a></li>
+                <li><a href="#pageC01_03" class="btn btn03">C01_03</a></li>
+                <li><a href="#pageC01_04" class="btn btn03">C01_04</a></li>
+              </ul>
+            </li>
+            <li><a href="#pageC02" class="btn btn02">C02</a></li>
+            <li><a href="#pageC03" class="btn btn03">C03</a></li>
+            <li><a href="#pageC04" class="btn btn04">C04</a></li>
+          </ul>
+        </li>
+        <li><a href="#" class="btn btn01">D</a>
+          <ul>
+            <li><a href="#" class="btn btn02">D01</a>
+              <ul>
+                <li>
+                  <a href="#" class="btn btn03">D01_01</a>
+                  <ul>
+                    <li><a href="#pageD01_01_01" class="btn btn04">D01_01_01</a></li>
+                    <li><a href="#pageD01_01_02" class="btn btn04">D01_01_02</a></li>
+                    <li><a href="#pageD01_01_03" class="btn btn04">D01_01_03</a></li>
+                    <li><a href="#pageD01_01_04" class="btn btn04">D01_01_04</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li><a href="#pageD02" class="btn btn02">D02</a></li>
+            <li><a href="#pageD03" class="btn btn02">D03</a></li>
+            <li><a href="#pageD04" class="btn btn02">D04</a></li>
+          </ul>
+        </li>
+<!--         <li><a href="#">dummy01</a></li>
+<li><a href="#">dummy02</a></li>
+<li><a href="#">dummy03</a></li>
+<li><a href="#">dummy04</a></li>
+<li><a href="#">dummy05</a></li>
+<li><a href="#">dummy06</a></li>
+<li><a href="#">dummy07</a></li>
+<li><a href="#">dummy08</a></li>
+<li><a href="#">dummy09</a></li>
+<li><a href="#">dummy10</a></li>
+<li><a href="#">dummy11</a></li>
+<li><a href="#">dummy12</a></li>
+<li><a href="#">dummy13</a></li>
+<li><a href="#">dummy14</a></li>
+<li><a href="#">dummy15</a></li>
+<li><a href="#">dummy16</a></li>
+<li><a href="#">dummy17</a></li> -->
+      </ul>
+      <!-- /.l-side -->
+    </div>
+  </main>
+  <script src="scripts/jquery.js"></script>
+  <script src="scripts/common.js"></script>
+</body>
+
+</html>

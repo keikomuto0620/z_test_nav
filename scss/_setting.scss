@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+/*
+#setting
+===============================================
+- キーカラーの設定
+- コンテンツ幅、ブレイクポイントの設定
+- mixinの設定
+- キーフレームアニメーションの設定
+*/
+
+//colors
+$mainColor: #5f1985;
+$subColor:#E50012;
+$bgColor:#000;
+
+//content width
+$breakPoint:768px;
+$contentWidth:980px;
+$contentWidthSP:94%;
+
+//mixin
+@mixin mq {
+  @media only screen and (max-width: $breakPoint) {
+    @content
+  }
+}
+
+@mixin fz($size) {
+  font-size: $size + px;
+  font-size: ($size / 10) * 1rem;
+}
